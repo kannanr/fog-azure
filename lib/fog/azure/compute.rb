@@ -63,12 +63,12 @@ module Fog
 
       class Real
         def initialize(options)
-          begin
-            require "azure"
-          rescue LoadError => e
-            retry if require("rubygems")
-            raise e.message
-          end
+          #begin
+            #require "azure"
+          #rescue LoadError => e
+          #  retry if require("rubygems")
+          #  raise e.message
+          #end
           ::Azure.configure do |cfg|
             cfg.management_certificate = options[:azure_pem]
             cfg.subscription_id = options[:azure_sub_id]
